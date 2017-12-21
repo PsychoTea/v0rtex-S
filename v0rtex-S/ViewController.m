@@ -12,6 +12,7 @@
 #include "kernel.h"
 #include "symbols.h"
 #include "root-rw.h"
+#include "nvpatch.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *outputView;
@@ -28,7 +29,8 @@
     
     // Attempt to init our offsets
     // Disable the run button if no offsets were found
-    if (!init_symbols()) {
+    if (load_offsets())
+    {
         [self writeText:@"Device not supported."];
         [self.sploitButton setHidden:TRUE];
         return;
@@ -64,7 +66,8 @@
     extern kern_return_t mach_vm_read_overwrite(vm_map_t target_task, mach_vm_address_t address, mach_vm_size_t size, mach_vm_address_t data, mach_vm_size_t *outsize);
     uint32_t magic = 0;
     mach_vm_size_t sz = sizeof(magic);
-    ret = mach_vm_read_overwrite(tfp0, 0xfffffff007004000 + kslide, sizeof(magic), (mach_vm_address_t)&magic, &sz);
+    vm_address_t kernel_base = 0xfffffff007004000 + kslide;
+    ret = mach_vm_read_overwrite(tfp0, kernel_base, sizeof(magic), (mach_vm_address_t)&magic, &sz);
     LOG("mach_vm_read_overwrite: %x, %s", magic, mach_error_string(ret));
     
     FILE *varF = fopen("/var/mobile/test.txt", "w");
@@ -72,10 +75,26 @@
     if (varF == 0) {
         [self writeText:@"ERROR: failed to write test var file"];
         return;
-    }
+    }   
     
     [self writeText:@"wrote test var file!"];
     [self writeText:[NSString stringWithFormat:@"/var/mobile/test.txt (%p)", varF]];
+    
+    
+    if(true)
+    {
+        char *nv_var = "com.apple.System.boot-nonce";
+        LOG("patching nvram variable : %s", nv_var);
+        [self writeText:[NSString stringWithFormat:@"patching nvram variable : %s", nv_var]];
+        int nvpatch_err = nvpatch(tfp0, kernel_base, nv_var);
+        
+        LOG("patching nvram variable '%s' %s", nv_var, nvpatch_err ? "failed" : "was successful");
+        [self writeText:[NSString stringWithFormat:@"patching nvram variable '%s' %s", nv_var, nvpatch_err ? "failed" : "was successful"]];
+    }
+    
+    
+
+    
     
     
     // Remount '/' as r/w

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		815EBEBE1FEBA6C20066C616 /* nvpatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 815EBEBB1FEBA6C20066C616 /* nvpatch.m */; };
 		B58B32401FE4EBA300EB7B47 /* kernel.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B323D1FE4EBA300EB7B47 /* kernel.m */; };
 		B58B32441FE4ED3B00EB7B47 /* ls in Resources */ = {isa = PBXBuildFile; fileRef = B58B32431FE4ED3B00EB7B47 /* ls */; };
 		B58B32461FE4ED6300EB7B47 /* symbols.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B32451FE4ED6300EB7B47 /* symbols.m */; };
@@ -23,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		815EBEBA1FEBA6C20066C616 /* arch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arch.h; sourceTree = "<group>"; };
+		815EBEBB1FEBA6C20066C616 /* nvpatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nvpatch.m; sourceTree = "<group>"; };
+		815EBEBC1FEBA6C20066C616 /* mach-o.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mach-o.h"; sourceTree = "<group>"; };
+		815EBEBD1FEBA6C20066C616 /* nvpatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nvpatch.h; sourceTree = "<group>"; };
 		B58B323D1FE4EBA300EB7B47 /* kernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kernel.m; sourceTree = "<group>"; };
 		B58B323F1FE4EBA300EB7B47 /* kernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel.h; sourceTree = "<group>"; };
 		B58B32431FE4ED3B00EB7B47 /* ls */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ls; sourceTree = "<group>"; };
@@ -83,6 +88,10 @@
 				EEAC27D31FDDB0A3003C1801 /* Supporting Files */,
 				B58B32431FE4ED3B00EB7B47 /* ls */,
 				EE5252BB1FDA4F2F00993801 /* main.m */,
+				815EBEBA1FEBA6C20066C616 /* arch.h */,
+				815EBEBC1FEBA6C20066C616 /* mach-o.h */,
+				815EBEBD1FEBA6C20066C616 /* nvpatch.h */,
+				815EBEBB1FEBA6C20066C616 /* nvpatch.m */,
 				EE5252AC1FDA4F2F00993801 /* AppDelegate.h */,
 				EE5252AD1FDA4F2F00993801 /* AppDelegate.m */,
 				EE5252AF1FDA4F2F00993801 /* ViewController.h */,
@@ -192,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815EBEBE1FEBA6C20066C616 /* nvpatch.m in Sources */,
 				B58B32491FE4F3DF00EB7B47 /* root-rw.m in Sources */,
 				B58B32401FE4EBA300EB7B47 /* kernel.m in Sources */,
 				B58B32461FE4ED6300EB7B47 /* symbols.m in Sources */,
@@ -336,10 +346,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6EKJWC698P;
+				DEVELOPMENT_TEAM = WATF666TG9;
 				INFOPLIST_FILE = "$(SRCROOT)/v0rtex-S/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sticktron.v0rtex;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.xninja.v0rtex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -352,10 +362,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6EKJWC698P;
+				DEVELOPMENT_TEAM = WATF666TG9;
 				INFOPLIST_FILE = "$(SRCROOT)/v0rtex-S/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sticktron.v0rtex;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.xninja.v0rtex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

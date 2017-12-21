@@ -12,6 +12,7 @@
 #include <strings.h>
 #include "common.h"
 
+
 extern uint64_t OFFSET_ZONE_MAP;
 extern uint64_t OFFSET_KERNEL_MAP;
 extern uint64_t OFFSET_KERNEL_TASK;
@@ -27,4 +28,4 @@ extern uint64_t OFFSET_IOSURFACEROOTUSERCLIENT_VTAB;
 extern uint64_t OFFSET_ROP_ADD_X0_X0_0x10;
 extern uint64_t OFFSET_ROOT_MOUNT_V_NODE;
 
-BOOL init_symbols(void);
+int load_offsets(void);
