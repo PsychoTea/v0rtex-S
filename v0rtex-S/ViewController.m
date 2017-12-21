@@ -21,6 +21,7 @@
 #include <CommonCrypto/CommonDigest.h>
 #include <mach-o/loader.h>
 #include <sys/dir.h>
+#include "nvpatch.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *outputView;
@@ -42,7 +43,8 @@ kptr_t self_proc;
     
     // Attempt to init our offsets
     // Disable the run button if no offsets were found
-    if (!init_symbols()) {
+    if (init_symbols())
+    {
         [self writeText:@"Device not supported."];
         [self.sploitButton setHidden:TRUE];
         return;
@@ -68,7 +70,7 @@ kptr_t self_proc;
         [self writeText:@"ERROR: exploit failed"];
         return;
     }
-    
+    vm_address_t kernel_base = kslide + 0xfffffff007004000;
     [self writeText:@"exploit succeeded!"];
     
     printf("got val for self_proc = 0x%llx \n", self_proc);
@@ -76,9 +78,19 @@ kptr_t self_proc;
     
     {
         // set up stuff
-        init_patchfinder(tfp0, kslide + 0xFFFFFFF007004000, NULL);
+        init_patchfinder(tfp0, kernel_base, NULL);
         init_amfi(tfp0);
         init_kernel(tfp0);
+    }
+    
+    {
+        char *nv_var = "com.apple.System.boot-nonce";
+        LOG("patching nvram variable : %s", nv_var);
+        [self writeText:[NSString stringWithFormat:@"patching nvram variable : %s", nv_var]];
+        int nvpatch_err = nvpatch(tfp0, kernel_base, nv_var);
+        
+        LOG("patching nvram variable '%s' %s", nv_var, nvpatch_err ? "failed" : "was successful");
+        [self writeText:[NSString stringWithFormat:@"patching nvram variable '%s' %s", nv_var, nvpatch_err ? "failed" : "was successful"]];
     }
     
     {
