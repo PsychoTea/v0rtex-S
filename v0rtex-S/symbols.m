@@ -60,6 +60,7 @@ BOOL init_symbols()
             OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070f22b4;
             OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070deb80;
             OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e4a238;
+            OFFSET_OSSERIALIZER_SERIALIZE               = 0xfffffff007486530;
             OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff0064ff0a8;
             OFFSET_ROP_LDR_X0_X0_0x10                   = 0xfffffff0074cf02c;
             OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075ec0b0;
@@ -126,6 +127,7 @@ BOOL init_symbols()
             OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070ad1ec;
             OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff007099a38;
             OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006f25538;
+            OFFSET_OSSERIALIZER_SERIALIZE               = 0xfffffff0074419b8;
             OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff006526178;
             OFFSET_ROP_LDR_X0_X0_0x10                   = 0xfffffff0074278dc;
             OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075a80b0;
@@ -150,6 +152,7 @@ BOOL init_symbols()
             OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070b938c;
             OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070a5bd8;
             OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006eee1b8;
+            OFFSET_OSSERIALIZER_SERIALIZE               = 0xfffffff00744db90;
             OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff0064b2178;
             OFFSET_ROP_LDR_X0_X0_0x10                   = 0xfffffff007433ab4;
             OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075b40b0;
@@ -164,4 +167,3 @@ BOOL init_symbols()
     
     return TRUE;
 }
-
