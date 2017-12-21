@@ -50,6 +50,20 @@ int init_symbols()
     //sysctl(version_prop, 2, NULL, &version_prop_len, NULL, 0);
     sysctl(version_prop, 2, version, &version_prop_len, NULL, 0);
 
+
+    /******READ BEFORE ADDING OFFSETS********/
+    /*
+    certain models have the same kernelcache. For example, iPhone6,1 and iPhone6,2 (iPhone 5s GSM and global)
+    they both have the same ipsw and same kernelcache. Such models should be combined with an OR logic
+    check how iPhone 7 and 5s models are combined
+    This file has conditions for all devices that have 10.3 or above, including 32 bit ones
+    but I haven't combined all devices like I mentioned above. If you're adding offsets for such a device, check the BuildManifest or the sha1 hash of ipsw files, and combine such devices with an OR logic.
+    Hardware platform (xxUAP and xxAP etc) doesn't matter, since kernel is the same. Just be careful when you get the kernelcache from the firmware package. Pick the right one. check BuildManifest if necessary
+    Thanks to everyone who worked hard for this.
+    */
+
+
+
     /******ADD IPADS HERE*****/
 
     /*****ADD 32 bit DEVICES HERE****/
