@@ -6,9 +6,10 @@
 //  Copyright © 2017 Sticktron. All rights reserved.
 //
 
-#include <sys/utsname.h>
 #include "symbols.h"
 #include "common.h"
+#include <sys/sysctl.h>
+#include <sys/utsname.h>
 
 uint64_t OFFSET_ZONE_MAP;
 uint64_t OFFSET_KERNEL_MAP;
@@ -31,20 +32,28 @@ uint64_t OFFSET_ROOT_MOUNT_V_NODE;
 
 #import <sys/utsname.h>
 
-BOOL init_symbols()
+int init_symbols()
 {
-    NSString *ver = [[NSProcessInfo processInfo] operatingSystemVersionString];
+    struct utsname sysinfo;
+    uname(&sysinfo);
     
-    struct utsname u;
-    uname(&u);
+    //read device id
+    int d_prop[2] = {CTL_HW, HW_MACHINE};
+    char device[20];
+    size_t d_prop_len = sizeof(device);
+    //sysctl(d_prop, 2, NULL, &d_prop_len, NULL, 0);
+    sysctl(d_prop, 2, device, &d_prop_len, NULL, 0);
     
-    LOG("Device: %s", u.machine);
-    LOG("Device Name: %s", u.nodename);
-    LOG("Device iOS Version: %@", ver);
+    int version_prop[2] = {CTL_KERN, KERN_OSVERSION};
+    char version[20];
+    size_t version_prop_len = sizeof(version);
+    //sysctl(version_prop, 2, NULL, &version_prop_len, NULL, 0);
+    sysctl(version_prop, 2, version, &version_prop_len, NULL, 0);
     
-    if (strcmp(u.machine, "iPhone9,3") == 0)
+    
+    if (!strcmp(device, "iPhone9,3"))
     {
-        if ([ver  isEqual: @"Version 10.3.1 (Build 14E304)"])
+        if (!strcmp(version, "14E304"))
         {
             OFFSET_ZONE_MAP                             = 0xfffffff007590478;
             OFFSET_KERNEL_MAP                           = 0xfffffff0075ec050;
@@ -66,9 +75,9 @@ BOOL init_symbols()
         }
     }
     
-    else if (strcmp(u.machine, "iPhone8,1"))
+    else if (!strcmp(device, "iPhone8,1"))
     {
-        if ([ver isEqual: @"Version 10.3.2 (Build 14F89)"])
+        if (!strcmp(version, "14F89"))
         {
             OFFSET_ZONE_MAP                             = 0xfffffff007548478;
             OFFSET_KERNEL_MAP                           = 0xfffffff0075a4050;
@@ -90,9 +99,11 @@ BOOL init_symbols()
     else
     {
         LOG("Device not supported.");
-        return FALSE;
+        return -1;
     }
-    
-    return TRUE;
+    LOG("%s", sysinfo.version);
+    LOG("loading offsets for %s - %s", device, version);
+    LOG("test offset addx0x0x10gadget: %llx", OFFSET_ROP_ADD_X0_X0_0x10);
+    return 0;
 }
 

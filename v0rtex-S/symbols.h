@@ -31,4 +31,4 @@ extern uint64_t OFFSET_ROP_LDR_X0_X0_0x10;
 extern uint64_t OFFSET_ROP_ADD_X0_X0_0x10;
 extern uint64_t OFFSET_ROOT_MOUNT_V_NODE;
 
-BOOL init_symbols(void);
+int init_symbols(void);
