@@ -49,6 +49,8 @@ int init_symbols()
     size_t version_prop_len = sizeof(version);
     //sysctl(version_prop, 2, NULL, &version_prop_len, NULL, 0);
     sysctl(version_prop, 2, version, &version_prop_len, NULL, 0);
+    
+    LOG("%s = %s", device, version);
 
 
     /******READ BEFORE ADDING OFFSETS********/
@@ -274,7 +276,7 @@ int init_symbols()
     		OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070999b8;
     		OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e7c9f8;
     		OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff0064b1398;
-        OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075ec0b0;
+            OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075ec0b0;
     	}
 
     	//10.3.1
@@ -370,19 +372,19 @@ int init_symbols()
     	//10.3.1
     	if(!strcmp(version, "14E304"))
     	{
-        OFFSET_ZONE_MAP                             = 0xfffffff007548478;
-        OFFSET_KERNEL_MAP                           = 0xfffffff0075a4050;
-        OFFSET_KERNEL_TASK                          = 0xfffffff0075a4048;
-        OFFSET_REALHOST                             = 0xfffffff00752aba0;
-        OFFSET_BZERO                                = 0xfffffff007081f80;
-        OFFSET_BCOPY                                = 0xfffffff007081dc0;
-        OFFSET_COPYIN                               = 0xfffffff007180720;
-        OFFSET_COPYOUT                              = 0xfffffff007180914;
-        OFFSET_IPC_PORT_ALLOC_SPECIAL               = 0xfffffff007099efc;
-        OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070ad154;
-        OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff007099a20;
-        OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e83af8;
-        OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff006481174;
+            OFFSET_ZONE_MAP                             = 0xfffffff007548478;
+            OFFSET_KERNEL_MAP                           = 0xfffffff0075a4050;
+            OFFSET_KERNEL_TASK                          = 0xfffffff0075a4048;
+            OFFSET_REALHOST                             = 0xfffffff00752aba0;
+            OFFSET_BZERO                                = 0xfffffff007081f80;
+            OFFSET_BCOPY                                = 0xfffffff007081dc0;
+            OFFSET_COPYIN                               = 0xfffffff007180720;
+            OFFSET_COPYOUT                              = 0xfffffff007180914;
+            OFFSET_IPC_PORT_ALLOC_SPECIAL               = 0xfffffff007099efc;
+            OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070ad154;
+            OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff007099a20;
+            OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e83af8;
+            OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff006481174;
     	}
 
     	//10.3
@@ -438,23 +440,23 @@ int init_symbols()
     	//10.3.1
     	if(!strcmp(version, "14E304"))
     	{
-        OFFSET_ZONE_MAP                             = 0xfffffff007590478;
-        OFFSET_KERNEL_MAP                           = 0xfffffff0075ec050;
-        OFFSET_KERNEL_TASK                          = 0xfffffff0075ec048;
-        OFFSET_REALHOST                             = 0xfffffff007572ba0;
-        OFFSET_BZERO                                = 0xfffffff0070c1f80;
-        OFFSET_BCOPY                                = 0xfffffff0070c1dc0;
-        OFFSET_COPYIN                               = 0xfffffff0071c6134;
-        OFFSET_COPYOUT                              = 0xfffffff0071c6414;
-        OFFSET_CHGPROCCNT                           = 0xfffffff007049e4b;
-        OFFSET_KAUTH_CRED_REF                       = 0xfffffff0073ada04;
-        OFFSET_IPC_PORT_ALLOC_SPECIAL               = 0xfffffff0070df05c;
-        OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070f22b4;
-        OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070deb80;
-        OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e4a238;
-        OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff0064ff0a8;
-        OFFSET_ROP_LDR_X0_X0_0x10                   = 0xfffffff0074cf02c;
-        OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075ec0b0;
+            OFFSET_ZONE_MAP                             = 0xfffffff007590478;
+            OFFSET_KERNEL_MAP                           = 0xfffffff0075ec050;
+            OFFSET_KERNEL_TASK                          = 0xfffffff0075ec048;
+            OFFSET_REALHOST                             = 0xfffffff007572ba0;
+            OFFSET_BZERO                                = 0xfffffff0070c1f80;
+            OFFSET_BCOPY                                = 0xfffffff0070c1dc0;
+            OFFSET_COPYIN                               = 0xfffffff0071c6134;
+            OFFSET_COPYOUT                              = 0xfffffff0071c6414;
+            OFFSET_CHGPROCCNT                           = 0xfffffff007049e4b;
+            OFFSET_KAUTH_CRED_REF                       = 0xfffffff0073ada04;
+            OFFSET_IPC_PORT_ALLOC_SPECIAL               = 0xfffffff0070df05c;
+            OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070f22b4;
+            OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070deb80;
+            OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e4a238;
+            OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff0064ff0a8;
+            OFFSET_ROP_LDR_X0_X0_0x10                   = 0xfffffff0074cf02c;
+            OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075ec0b0;
     	}
 
     	//10.3
@@ -566,61 +568,14 @@ int init_symbols()
     		LOG("10.3 - 14E277 offsets not found for %s", device);
     		return -1;;
     	}
-
-
     }
-
-
-    if (!strcmp(device, "iPhone9,3"))
+    
+    if(!OFFSET_ZONE_MAP)
     {
-        if (!strcmp(version, "14E304"))
-        {
-            OFFSET_ZONE_MAP                             = 0xfffffff007590478;
-            OFFSET_KERNEL_MAP                           = 0xfffffff0075ec050;
-            OFFSET_KERNEL_TASK                          = 0xfffffff0075ec048;
-            OFFSET_REALHOST                             = 0xfffffff007572ba0;
-            OFFSET_BZERO                                = 0xfffffff0070c1f80;
-            OFFSET_BCOPY                                = 0xfffffff0070c1dc0;
-            OFFSET_COPYIN                               = 0xfffffff0071c6134;
-            OFFSET_COPYOUT                              = 0xfffffff0071c6414;
-            OFFSET_CHGPROCCNT                           = 0xfffffff007049e4b;
-            OFFSET_KAUTH_CRED_REF                       = 0xfffffff0073ada04;
-            OFFSET_IPC_PORT_ALLOC_SPECIAL               = 0xfffffff0070df05c;
-            OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070f22b4;
-            OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070deb80;
-            OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e4a238;
-            OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff0064ff0a8;
-            OFFSET_ROP_LDR_X0_X0_0x10                   = 0xfffffff0074cf02c;
-            OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075ec0b0;
-        }
-    }
-
-    else if (!strcmp(device, "iPhone8,1"))
-    {
-        if (!strcmp(version, "14F89"))
-        {
-            OFFSET_ZONE_MAP                             = 0xfffffff007548478;
-            OFFSET_KERNEL_MAP                           = 0xfffffff0075a4050;
-            OFFSET_KERNEL_TASK                          = 0xfffffff0075a4048;
-            OFFSET_REALHOST                             = 0xfffffff00752aba0;
-            OFFSET_BZERO                                = 0xfffffff007081f80;
-            OFFSET_BCOPY                                = 0xfffffff007081dc0;
-            OFFSET_COPYIN                               = 0xfffffff0071806f4;
-            OFFSET_COPYOUT                              = 0xfffffff0071808e8;
-            OFFSET_IPC_PORT_ALLOC_SPECIAL               = 0xfffffff007099e94;
-            OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070ad16c;
-            OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070999b8;
-            OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006e7c9f8;
-            OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff006b916b8;
-            OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075ec0b0;
-        }
-    }
-
-    else
-    {
-        LOG("Device not supported.");
+        LOG("Device not supported");
         return -1;
     }
+    
     LOG("%s", sysinfo.version);
     LOG("loading offsets for %s - %s", device, version);
     LOG("test offset addx0x0x10gadget: %llx", OFFSET_ROP_ADD_X0_X0_0x10);
