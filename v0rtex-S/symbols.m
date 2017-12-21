@@ -101,6 +101,7 @@ BOOL init_symbols()
             OFFSET_IPC_KOBJECT_SET                      = 0xfffffff0070b9374;
             OFFSET_IPC_PORT_MAKE_SEND                   = 0xfffffff0070a5c40;
             OFFSET_IOSURFACEROOTUSERCLIENT_VTAB         = 0xfffffff006eee1b8;
+            OFFSET_OSSERIALIZER_SERIALIZE               = 0xfffffff00744d6ac;
             OFFSET_ROP_ADD_X0_X0_0x10                   = 0xfffffff0064b5178;
             OFFSET_ROP_LDR_X0_X0_0x10                   = 0xfffffff0074335d0;
             OFFSET_ROOT_MOUNT_V_NODE                    = 0xfffffff0075b40b0;
