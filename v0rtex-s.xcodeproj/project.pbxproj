@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81BE350D1FEBC83100525F57 /* nvpatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BE35091FEBC83100525F57 /* nvpatch.m */; };
 		B544A5C61FEB2F3400AA5749 /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = B544A5C51FEB2F3400AA5749 /* bootstrap.tar */; };
 		B58B32401FE4EBA300EB7B47 /* kernel.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B323D1FE4EBA300EB7B47 /* kernel.m */; };
 		B58B32461FE4ED6300EB7B47 /* symbols.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B32451FE4ED6300EB7B47 /* symbols.m */; };
@@ -31,6 +32,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81BE35091FEBC83100525F57 /* nvpatch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nvpatch.m; sourceTree = "<group>"; };
+		81BE350A1FEBC83100525F57 /* nvpatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nvpatch.h; sourceTree = "<group>"; };
+		81BE350B1FEBC83100525F57 /* arch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arch.h; sourceTree = "<group>"; };
+		81BE350C1FEBC83100525F57 /* mach-o.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mach-o.h"; sourceTree = "<group>"; };
 		B544A5C51FEB2F3400AA5749 /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
 		B58B323D1FE4EBA300EB7B47 /* kernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kernel.m; sourceTree = "<group>"; };
 		B58B323F1FE4EBA300EB7B47 /* kernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel.h; sourceTree = "<group>"; };
@@ -113,6 +118,10 @@
 				EE5252AF1FDA4F2F00993801 /* ViewController.h */,
 				EE5252B01FDA4F2F00993801 /* ViewController.m */,
 				EE5169291FDC2C9D00805460 /* common.h */,
+				81BE350B1FEBC83100525F57 /* arch.h */,
+				81BE350C1FEBC83100525F57 /* mach-o.h */,
+				81BE350A1FEBC83100525F57 /* nvpatch.h */,
+				81BE35091FEBC83100525F57 /* nvpatch.m */,
 				EE81AD151FDEF1AB0094418B /* v0rtex.h */,
 				EE5169271FDC2A7000805460 /* v0rtex.m */,
 				B58B323F1FE4EBA300EB7B47 /* kernel.h */,
@@ -236,6 +245,7 @@
 				EE5252B11FDA4F2F00993801 /* ViewController.m in Sources */,
 				EE5252BC1FDA4F2F00993801 /* main.m in Sources */,
 				EE5252AE1FDA4F2F00993801 /* AppDelegate.m in Sources */,
+				81BE350D1FEBC83100525F57 /* nvpatch.m in Sources */,
 				EE5169281FDC2A7000805460 /* v0rtex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +385,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6EKJWC698P;
+				DEVELOPMENT_TEAM = WATF666TG9;
 				ENABLE_BITCODE = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/v0rtex-S/Info.plist";
@@ -385,7 +395,7 @@
 					"$(PROJECT_DIR)/v0rtex-S",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sticktron.v0rtex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xninja.v0rtex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -400,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6EKJWC698P;
+				DEVELOPMENT_TEAM = WATF666TG9;
 				ENABLE_BITCODE = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/v0rtex-S/Info.plist";
@@ -410,7 +420,7 @@
 					"$(PROJECT_DIR)/v0rtex-S",
 				);
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sticktron.v0rtex;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xninja.v0rtex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
