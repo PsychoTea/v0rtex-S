@@ -141,6 +141,10 @@ kptr_t self_proc;
         [fileMgr copyItemAtPath:[bundlePath stringByAppendingString:@"/bash"]
                          toPath:@"/bin/sh" error:nil];
         
+        // copy cydia
+        [fileMgr copyItemAtPath:[bundlePath stringByAppendingString:@"/cydia.tar"]
+                         toPath:@"/v0rtex/cydia.tar" error:nil];
+        
         // make sure all our bins have perms
         chmod("/v0rtex/dropbear", 0777);
         chmod("/v0rtex/tar", 0777);
@@ -172,6 +176,25 @@ kptr_t self_proc;
         trust_files("/v0rtex/bins");
         
         [self writeText:@"extracted and signed all bins"];
+    }
+    
+    {
+        // extract cydia
+        execprog(0, "/v0rtex/tar", (const char **)&(const char*[]){ "/v0rtex/tar", "-xf", "/v0rtex/cydia.tar", "-C", "/Applications", NULL });
+        
+        // give perms
+        chmod("/Applications/Cydia.app", 0755);
+        chmod("/Applications/Cydia.app/Cydia", 0755);
+        
+        // sign it
+        inject_trust("/Applications/Cydia.app/Cydia");
+        
+        // no stash
+        close(creat("/.cydia_no_stash", 0644));
+        
+        execprog(0, "/v0rtex/bins/uicache", NULL);
+        
+        [self writeText:@"extracted cydia and ran uicache... good luck"];
     }
     
     {

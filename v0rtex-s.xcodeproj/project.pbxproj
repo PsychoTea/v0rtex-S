@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B514CC681FEC8691005F4E6B /* binCreation in Resources */ = {isa = PBXBuildFile; fileRef = B514CC671FEC8691005F4E6B /* binCreation */; };
+		B514CC6A1FEC92A5005F4E6B /* cydia.tar in Resources */ = {isa = PBXBuildFile; fileRef = B514CC691FEC92A5005F4E6B /* cydia.tar */; };
 		B544A5C61FEB2F3400AA5749 /* bootstrap.tar in Resources */ = {isa = PBXBuildFile; fileRef = B544A5C51FEB2F3400AA5749 /* bootstrap.tar */; };
 		B58B32401FE4EBA300EB7B47 /* kernel.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B323D1FE4EBA300EB7B47 /* kernel.m */; };
 		B58B32461FE4ED6300EB7B47 /* symbols.m in Sources */ = {isa = PBXBuildFile; fileRef = B58B32451FE4ED6300EB7B47 /* symbols.m */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		B514CC671FEC8691005F4E6B /* binCreation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = binCreation; sourceTree = "<group>"; };
+		B514CC691FEC92A5005F4E6B /* cydia.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = cydia.tar; sourceTree = "<group>"; };
 		B544A5C51FEB2F3400AA5749 /* bootstrap.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = bootstrap.tar; sourceTree = "<group>"; };
 		B58B323D1FE4EBA300EB7B47 /* kernel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kernel.m; sourceTree = "<group>"; };
 		B58B323F1FE4EBA300EB7B47 /* kernel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel.h; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				EEAC27D31FDDB0A3003C1801 /* Supporting Files */,
 				B5C5C5D51FE9DADC0022D2EC /* bash */,
 				B544A5C51FEB2F3400AA5749 /* bootstrap.tar */,
+				B514CC691FEC92A5005F4E6B /* cydia.tar */,
 				B5ED69071FEAFA1500D5DCC7 /* dropbear */,
 				B58B325A1FE525A300EB7B47 /* dropbear.plist */,
 				B5C5C5DD1FE9EF660022D2EC /* launchctl */,
@@ -211,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B514CC6A1FEC92A5005F4E6B /* cydia.tar in Resources */,
 				B514CC681FEC8691005F4E6B /* binCreation in Resources */,
 				B5ED69081FEAFA1500D5DCC7 /* dropbear in Resources */,
 				B5C5C5D61FE9DADC0022D2EC /* bash in Resources */,
