@@ -87,7 +87,7 @@ BOOL init_symbols()
         }
     }
     
-        else if (strcmp(u.machine, "iPhone7,2"))
+    else if (strcmp(u.machine, "iPhone7,2"))
     {
         if ([ver isEqual: @"Version 10.3.3 (Build 14G60)"])
         {
